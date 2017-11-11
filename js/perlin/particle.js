@@ -29,7 +29,7 @@ function Particle() {
     }
 
     this.show = function() {
-        stroke(this._rw, this._rh, 126, 10);
+        stroke(31, 5);
         point(this.pos.x, this.pos.y);
     }
 

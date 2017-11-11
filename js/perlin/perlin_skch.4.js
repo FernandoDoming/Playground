@@ -1,4 +1,4 @@
-const dt = 0.003;
+const dt = 0.05;
 const scale = 20;
 let cols, rows;
 let zoff = 0;
@@ -24,14 +24,14 @@ function setup() {
     rows = floor(HEIGHT3 / scale);
     flowfield = new Array(cols * rows);
 
-    background(31);
+    background(255);
 }
 
 function draw() {
 	for (let x = 0; x < rows; x+=1) {
 		for (let y = 0; y < cols; y+=1) {
             const index = x + y * cols;
-            const angle = 4 * TWO_PI * noise(dt * x, dt * y, zoff);
+            const angle = 2 * TWO_PI * noise(dt * x, dt * y, zoff);
             const v = p5.Vector.fromAngle(angle);
 
             v.setMag(3);
